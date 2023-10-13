@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Tile Map Layers</title>
+  <title>瓦片地图层</title>
   <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
-  <script src="../../../../../assets/scripts/main_script.js" type="module"></script>
+  <script src="../../../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page outlining the different functions and variables associated with Tile Map Layers" />
   <meta name="rh-index-keywords" content="" />
@@ -14,72 +14,72 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Tile Map Layers</h1>
-  <p>The <span data-keyref="GameMaker Name">GameMaker</span> <a href="../../../../../The_Asset_Editors/Rooms.htm">Room Editor</a> permits you to add tiles into any given room using <i>layers</i>. As the name implies, a tile map layer is simply a collection of tile set tiles that are all considered to be at the same depth within the room, and by stacking layers you can make some things draw over or under others. You can also control certain aspects of layers from code, adding or removing things, or changing certain properties of the layer or what it contains at run time. Note that in the room editor you are limited to one tile map per layer (the <a href="../../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm"><i>Tile Layer</i></a>), but when working with them in code, you can have multiple tile maps assigned to a single layer, with each map having its own unique ID and properties, so:</p>
+  <h1>瓦片地图层</h1>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> <a href="../../../../../The_Asset_Editors/Rooms.htm">房间编辑器</a>允许你使用<i>图层</i>将<span class="notranslate">tiles</span> 添加到任何指定的<span class="notranslate">room</span> 。顾名思义，一个<span class="notranslate">tile</span> 地图层只是一个<span class="notranslate">tile set</span> <span class="notranslate">tiles</span> 的集合，它们都被认为在<span class="notranslate">room</span> 内处于相同的深度，通过堆叠层，你可以使一些东西在其他东西上面或下面绘制。你也可以从代码中控制图层的某些方面，添加或删除一些东西，或者在运行时改变图层的某些属性或它包含的内容。请注意，在<span class="notranslate">room</span> 编辑器中，每个图层只能有一个<span class="notranslate">tile</span> 地图（the <a href="../../../../../The_Asset_Editors/Room_Properties/Layer_Properties.htm"><i>瓦片层</i></a>)，但在代码中处理它们时，你可以为一个图层分配多个<span class="notranslate">tile</span> ，每个地图都有自己的唯一ID和属性，所以。</p>
   <ul class="colour">
-    <li>The <i>tile set</i> is the resource that you use to create tile layers and tile maps</li>
-    <li>The <i>tile layer</i> is what you create in the Room Editor to add tile sets to</li>
-    <li>The <i>tile map</i> is what you call the collection of tiles that are added to a layer, either in the room editor or through code, as a single element on that layer</li>
+    <li><i>瓦片集是</i>你用来创建<span class="notranslate">tile</span> 图层和<span class="notranslate">tile</span> 地图的资源。</li>
+    <li><i>瓦片层</i>是你在<span class="notranslate">Room</span> 编辑器中创建的，用于将<span class="notranslate">tile sets</span> 。</li>
+    <li><i>瓦片地图</i>就是你所说的<span class="notranslate">tiles</span> ，它被添加到一个图层上，无论是在<span class="notranslate">room</span> 编辑器中还是通过代码，都是该图层上的一个单一元素</li>
   </ul>
-  <p>Below is a list of all the functions that can be used for editing <b>tile map layers</b>:</p>
+  <p>下面是所有可用于编辑瓦<b>片地图层的</b>功能列表。</p>
   <ul class="colour">
-    <li><a href="layer_tilemap_get_id.htm">layer_tilemap_get_id</a></li>
-    <li><a href="layer_tilemap_exists.htm">layer_tilemap_exists</a></li>
-    <li><a href="layer_tilemap_create.htm">layer_tilemap_create</a></li>
-    <li><a href="layer_tilemap_destroy.htm">layer_tilemap_destroy</a></li>
-    <li><a href="tilemap_tileset.htm">tilemap_tileset</a></li>
-    <li><a href="tilemap_clear.htm">tilemap_clear</a></li>
-    <li><a href="tilemap_x.htm">tilemap_x</a></li>
-    <li><a href="tilemap_y.htm">tilemap_y</a></li>
-    <li><a href="tilemap_set.htm">tilemap_set</a></li>
-    <li><a href="tilemap_set_at_pixel.htm">tilemap_set_at_pixel</a></li>
-    <li><a href="tilemap_set_mask.htm">tilemap_set_mask</a></li>
-    <li><a href="tilemap_set_global_mask.htm">tilemap_set_global_mask</a></li>
-    <li><a href="tilemap_set_width.htm">tilemap_set_width</a></li>
-    <li><a href="tilemap_set_height.htm">tilemap_set_height</a></li>
-    <li><a href="tilemap_get_mask.htm">tilemap_get_mask</a></li>
-    <li><a href="tilemap_get_global_mask.htm">tilemap_get_global_mask</a></li>
-    <li><a href="tilemap_get_tileset.htm">tilemap_get_tileset</a></li>
-    <li><a href="tilemap_get_frame.htm">tilemap_get_frame</a></li>
-    <li><a href="tilemap_get_tile_width.htm">tilemap_get_tile_width</a></li>
-    <li><a href="tilemap_get_tile_height.htm">tilemap_get_tile_height</a></li>
-    <li><a href="tilemap_get_width.htm">tilemap_get_width</a></li>
-    <li><a href="tilemap_get_height.htm">tilemap_get_height</a></li>
-    <li><a href="tilemap_get_x.htm">tilemap_get_x</a></li>
-    <li><a href="tilemap_get_y.htm">tilemap_get_y</a></li>
-    <li><a href="tilemap_get.htm">tilemap_get</a></li>
-    <li><a href="tilemap_get_at_pixel.htm">tilemap_get_at_pixel</a></li>
-    <li><a href="tilemap_get_cell_x_at_pixel.htm">tilemap_get_cell_x_at_pixel</a></li>
-    <li><a href="tilemap_get_cell_y_at_pixel.htm">tilemap_get_cell_y_at_pixel</a></li>
-    <li><a href="../../../Drawing/Sprites_And_Tiles/draw_tilemap.htm">draw_tilemap</a></li>
+    <li><a href="layer_tilemap_get_id.htm"><span class="notranslate">layer_tilemap_get_id</span></a></li>
+    <li><a href="layer_tilemap_exists.htm"><span class="notranslate">layer_tilemap_exists</span></a></li>
+    <li><a href="layer_tilemap_create.htm"><span class="notranslate">layer_tilemap_create</span></a></li>
+    <li><a href="layer_tilemap_destroy.htm"><span class="notranslate">layer_tilemap_destroy</span></a></li>
+    <li><a href="tilemap_tileset.htm"><span class="notranslate">tilemap_tileset</span></a></li>
+    <li><a href="tilemap_clear.htm"><span class="notranslate">tilemap_clear</span></a></li>
+    <li><a href="tilemap_x.htm"><span class="notranslate">tilemap_x</span></a></li>
+    <li><a href="tilemap_y.htm"><span class="notranslate">tilemap_y</span></a></li>
+    <li><a href="tilemap_set.htm"><span class="notranslate">tilemap_set</span></a></li>
+    <li><a href="tilemap_set_at_pixel.htm"><span class="notranslate">tilemap_set_at_pixel</span></a></li>
+    <li><a href="tilemap_set_mask.htm"><span class="notranslate">tilemap_set_mask</span></a></li>
+    <li><a href="tilemap_set_global_mask.htm"><span class="notranslate">tilemap_set_global_mask</span></a></li>
+    <li><a href="tilemap_set_width.htm"><span class="notranslate">tilemap_set_width</span></a></li>
+    <li><a href="tilemap_set_height.htm"><span class="notranslate">tilemap_set_height</span></a></li>
+    <li><a href="tilemap_get_mask.htm"><span class="notranslate">tilemap_get_mask</span></a></li>
+    <li><a href="tilemap_get_global_mask.htm"><span class="notranslate">tilemap_get_global_mask</span></a></li>
+    <li><a href="tilemap_get_tileset.htm"><span class="notranslate">tilemap_get_tileset</span></a></li>
+    <li><a href="tilemap_get_frame.htm"><span class="notranslate">tilemap_get_frame</span></a></li>
+    <li><a href="tilemap_get_tile_width.htm"><span class="notranslate">tilemap_get_tile_width</span></a></li>
+    <li><a href="tilemap_get_tile_height.htm"><span class="notranslate">tilemap_get_tile_height</span></a></li>
+    <li><a href="tilemap_get_width.htm"><span class="notranslate">tilemap_get_width</span></a></li>
+    <li><a href="tilemap_get_height.htm"><span class="notranslate">tilemap_get_height</span></a></li>
+    <li><a href="tilemap_get_x.htm"><span class="notranslate">tilemap_get_x</span></a></li>
+    <li><a href="tilemap_get_y.htm"><span class="notranslate">tilemap_get_y</span></a></li>
+    <li><a href="tilemap_get.htm"><span class="notranslate">tilemap_get</span></a></li>
+    <li><a href="tilemap_get_at_pixel.htm"><span class="notranslate">tilemap_get_at_pixel</span></a></li>
+    <li><a href="tilemap_get_cell_x_at_pixel.htm"><span class="notranslate">tilemap_get_cell_x_at_pixel</span></a></li>
+    <li><a href="tilemap_get_cell_y_at_pixel.htm"><span class="notranslate">tilemap_get_cell_y_at_pixel</span></a></li>
+    <li><a href="../../../Drawing/Sprites_And_Tiles/draw_tilemap.htm"><span class="notranslate">draw_tilemap</span></a></li>
   </ul>
-  <p> </p>
-  <p>Apart from the functions listed above to set tile maps, you also have a number of functions that can be used to manipulate the data of individual tiles. A &quot;blob&quot; of tile data is made up of the tile index plus a few extra bits to show whether the tile has been rotated, flipped or mirrored. You also have the possibility of adding your own bit-mask to the tile data, although this is for advanced users only as you will be masking off bits that are reserved for the tile index - essentially there are 19 bits reserved for your tile indices, but if you only use 8 of them, then you have eleven bits left over that can be used to create a custom mask. This mask can then be used and checked in code to create custom tile collisions or whatever. However, you would normally not need to create your own tile data blobs, and would instead use the function <a href="tilemap_get.htm"><span class="inline">tilemap_get()</span></a> to get the tile data, then you would manipulate it using the functions below, and then you would set it again using <a href="tilemap_set.htm"><span class="inline">tilemap_set()</span></a>.</p>
-  <p>Below is a list of all the functions that can be used for editing individual <b>tiles</b>:</p>
+  <p> </p>
+  <p>除了上面列出的设置<span class="notranslate">tile</span> 地图的函数外，你还有一些函数可以用来操作单个<span class="notranslate">tiles</span> 的数据。一个 &quot;blob &quot;的<span class="notranslate">tile</span> 数据是由<span class="notranslate">tile</span> 索引加上一些额外的位组成的，以显示<span class="notranslate">tile</span> 是否已经被旋转、翻转或镜像了。你也可以在<span class="notranslate">tile</span> 数据中加入你自己的位掩码，尽管这只适用于高级用户，因为你将掩码保留给<span class="notranslate">tile</span> 索引的位--基本上有19位保留给你的<span class="notranslate">tile</span> 索引，但如果你只使用其中的8位，那么你还有11位可以用来创建一个自定义掩码。然后这个掩码可以在代码中使用和检查，以创建自定义的<span class="notranslate">tile</span> 碰撞或其他。然而，你通常不需要创建你自己的<span class="notranslate">tile</span> 数据块，而会使用函数 <a href="tilemap_get.htm"><span class="inline">tilemap_get()</span></a>来获取<span class="notranslate">tile</span> 数据，然后用下面的函数来处理它，然后再用 <a href="tilemap_set.htm"><span class="inline">tilemap_set()</span></a>.</p>
+  <p>下面是所有可用于编辑单个<b>瓷砖</b>的功能的列表。</p>
   <ul class="colour">
-    <li><a href="tile_get_empty.htm">tile_get_empty</a></li>
-    <li><a href="tile_get_index.htm">tile_get_index</a></li>
-    <li><a href="tile_get_flip.htm">tile_get_flip</a></li>
-    <li><a href="tile_get_mirror.htm">tile_get_mirror</a></li>
-    <li><a href="tile_get_rotate.htm">tile_get_rotate</a></li>
-    <li><a href="tile_set_empty.htm">tile_set_empty</a></li>
-    <li><a href="tile_set_index.htm">tile_set_index</a></li>
-    <li><a href="tile_set_flip.htm">tile_set_flip</a></li>
-    <li><a href="tile_set_mirror.htm">tile_set_mirror</a></li>
-    <li><a href="tile_set_rotate.htm">tile_set_rotate</a></li>
-    <li><a href="../../../Drawing/Sprites_And_Tiles/draw_tile.htm">draw_tile</a></li>
+    <li><a href="tile_get_empty.htm"><span class="notranslate">tile_get_empty</span></a></li>
+    <li><a href="tile_get_index.htm"><span class="notranslate">tile_get_index</span></a></li>
+    <li><a href="tile_get_flip.htm"><span class="notranslate">tile_get_flip</span></a></li>
+    <li><a href="tile_get_mirror.htm"><span class="notranslate">tile_get_mirror</span></a></li>
+    <li><a href="tile_get_rotate.htm"><span class="notranslate">tile_get_rotate</span></a></li>
+    <li><a href="tile_set_empty.htm"><span class="notranslate">tile_set_empty</span></a></li>
+    <li><a href="tile_set_index.htm"><span class="notranslate">tile_set_index</span></a></li>
+    <li><a href="tile_set_flip.htm"><span class="notranslate">tile_set_flip</span></a></li>
+    <li><a href="tile_set_mirror.htm"><span class="notranslate">tile_set_mirror</span></a></li>
+    <li><a href="tile_set_rotate.htm"><span class="notranslate">tile_set_rotate</span></a></li>
+    <li><a href="../../../Drawing/Sprites_And_Tiles/draw_tile.htm"><span class="notranslate">draw_tile</span></a></li>
   </ul>
-  <p> </p>
-  <p> </p>
-  <p> </p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Rooms.htm">Rooms</a></div>
-        <div style="float:right">Next: <a href="../Background_Layers/Background_Layers.htm">Background Layers</a></div>
+        <div style="float:left">返回。<a href="../Rooms.htm">房间</a></div>
+        <div style="float:right">下一步。<a href="../Background_Layers/Background_Layers.htm">背景图层</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2022 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span> 2022 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Tile Map Layers

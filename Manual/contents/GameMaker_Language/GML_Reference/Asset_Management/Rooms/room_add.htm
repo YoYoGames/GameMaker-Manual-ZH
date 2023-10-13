@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>room_add</title>
-  <meta name="generator" content="Adobe RoboHelp 2022" />
+  <title>添置房间</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
-  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <script src="../../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page outlining the function room_add" />
   <meta name="rh-index-keywords" content="room_add" />
@@ -14,33 +14,33 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>room_add</h1>
-  <p>This function will create a new, empty, room and add it to your game, returning its index to be stored in a variable for all further codes that deal with this room. Note that each room is permanently added to the game until the executable is closed, ie: <i>rooms added through code cannot be deleted again</i>. This has important implications for memory use and so you should use this function with care.</p>
-  <p class="note"><span data-conref="../../../../assets/snippets/Tag_note.hts"> </span> New rooms are not part of usual room ordering, so they do not have a &quot;previous&quot; or &quot;next&quot; room (meaning that the functions <span style="font-size:1px;"><a href="room_next.htm"><span class="inline">room_next()</span></a></span> and <span style="font-size:1px;"><a href="room_previous.htm"><span class="inline">room_previous()</span></a></span> will not work). To jump from the added room to another, you must use the index of the room itself.</p>
-  <p> </p>
-  <h4>Syntax:</h4>
+  <h1>添置房间</h1>
+  <p>这个函数将创建一个新的、空的、<span class="notranslate">room</span> ，并将其添加到你的游戏中，返回它的索引，以储存在一个变量中，供所有进一步处理这个<span class="notranslate">room</span> 的代码使用。请注意，每个<span class="notranslate">room</span> ，直到可执行文件关闭，都会被永久地添加到游戏中，即：<i>通过代码添加的房间不能再被删除</i>。这对内存的使用有重要影响，所以你应该谨慎使用这个函数。</p>
+  <p class="note"><b>注意</b>：新的<span class="notranslate">rooms</span> ，不属于通常的<span class="notranslate">room</span> 排序，所以它们没有 &quot;上一个 &quot;或 &quot;下一个 &quot;<span class="notranslate">room</span> （意味着函数 <span style="font-size:1px;"><a href="room_next.htm"><span class="inline">room_next()</span></a></span>和 <span style="font-size:1px;"><a href="room_previous.htm"><span class="inline">room_previous()</span></a></span>将不起作用）。要从添加的<span class="notranslate">room</span> 跳到另一个，你必须使用<span class="notranslate">room</span> 本身的索引。</p>
+  <p> </p>
+  <h4>语法。</h4>
   <p class="code">room_add();</p>
-  <p> </p>
-  <h4>Returns:</h4>
-  <p class="code"><span data-keyref="Type_Asset_Room"><a href="The_Asset_Editors/Rooms.htm" target="_blank">Room Asset</a></span></p>
-  <p> </p>
-  <h4>Example:</h4>
+  <p> </p>
+  <h4>返回。</h4>
+  <p class="code"><span data-keyref="Type_Asset_Room">Room Asset</span></p>
+  <p> </p>
+  <h4>例子。</h4>
   <p class="code">global.myroom = room_add();<br />
     room_set_width(global.myroom, 640);<br />
     room_set_height(global.myroom, 480);<br />
     room_set_persistent(global.myroom, false);</p>
-  <p>This will create a new room and store its index in the variable &quot;global.myroom&quot;. It will then set its width to 640 pixels, its height to 480 pixels, and its persistence to <span class="inline">false</span>.</p>
-  <p> </p>
-  <p> </p>
-  <p> </p>
+  <p>这将创建一个新的<span class="notranslate">room</span> ，并在变量 &quot;global.myroom &quot;中存储其索引。然后，它将设置其宽度为640像素，高度为480像素，其持久性为 <span class="inline">false</span> 。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="Rooms.htm">Rooms</a></div>
-        <div style="float:right">Next: <a href="room_duplicate.htm">room_duplicate</a></div>
+        <div style="float:left">返回。<a href="Rooms.htm">房间</a></div>
+        <div style="float:right">下一步。 <a href="room_duplicate.htm"><span class="notranslate">room_duplicate</span></a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2023 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span> 2022 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 room_add

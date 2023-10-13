@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Android Extensions</title>
+  <title>安卓扩展</title>
   <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
-  <script src="../../assets/scripts/main_script.js" type="module"></script>
+  <script src="../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page detailing how Android extensions work" />
   <meta name="rh-index-keywords" content="Extensions - Creating Android Extensions" />
@@ -14,26 +14,26 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Android Extensions</h1>
-  <p>To create an extension for Android you have to do it in two parts. The first part would be to add the extension itself, along with the required files, and the second is to create the functions and macros/constants that the extension requires.</p>
-  <p>The functions and constants are added using <strong>placeholder </strong>files to group them together, so you&#39;d add a placeholder and then define the functions and macros as explained in the previous section. To add the rest of the files though you would need to first tick the <em>Android </em>check-box in the <b>Extra Platforms</b> section of the editor, which will open up the extension&#39;s Android Properties:</p>
+  <h1>安卓扩展</h1>
+  <p>要为<span class="notranslate">extension</span> 创建一个<span class="notranslate">Android</span> ，你必须分两部分进行。第一部分是添加<span class="notranslate">extension</span> 本身，以及所需的文件，第二部分是创建<span class="notranslate">extension</span> 所需的函数和宏/常量。</p>
+  <p>函数和常量是使用<strong>占位符 </strong>文件来添加的，所以你要添加一个占位符，然后按照上一节的解释来定义函数和宏。要添加其余的文件，你需要首先在编辑器的<b>额外平台</b>部分勾选<em>Android </em>的复选框，这将打开扩展的<span class="notranslate">Android</span> 属性。</p>
   <p class="dropspot"><img alt="Android Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_Android.png" /></p>
-  <p>Here you can give the following details:</p>
+  <p>在这里，你可以提供以下细节。</p>
   <ul class="colour">
-    <li class="dropspot"><strong>Class Name</strong>: Your extension can have multiple classes, with each class having its own functions and constants, so you should give it a name that reflects its purpose.</li>
-    <li class="dropspot"><strong>Android Permissions</strong>: Here you can add in any extra permissions that your extension requires. What these permissions are will depend entirely on the use that the extension has, and so you should <a href="https://developer.android.com/reference/android/Manifest.permission.html">check the documentation supplied by Google</a> for the Android platform, or, if you are using a third party SDK, the documentation that comes with the SDK. To add a new permission you need to click on the <img alt="Add Argument Icon" class="icon" height="18" src="../../assets/Images/Icons/Icon_AddArgument.png" width="18" /> button to add a placeholder permission, and then do a double <img alt="LMB Icon" class="icon" src="../../assets/Images/Icons/Icon_LMB.png" /> click on that to edit it to what is required. You can remove permissions using the <img alt="Remove Argument Icon" class="icon" src="../../assets/Images/Icons/Icon_RemoveArgument.png" /> button.</li>
-    <li class="dropspot"><b>Code Injection</b>: Here you can add any code to be injected (added) into your Android application when your game is built for testing or final release. Make sure to revise this (and your permissions) carefully before submitting any games to the store, as incorrect settings will cause your game to be failed for submission. See the section below for more information.</li>
+    <li class="dropspot"><strong>类的名称</strong>。你的<span class="notranslate">extension</span> ，可以有多个类，每个类都有自己的功能和常量，所以你应该给它一个反映其目的的名字。</li>
+    <li class="dropspot"><strong>安卓权限</strong>。在这里你可以添加任何你的<span class="notranslate">extension</span> 需要的额外权限。这些权限是什么将完全取决于<span class="notranslate">extension</span> 的用途，因此你应该<a href="https://developer.android.com/reference/android/Manifest.permission.html">查看谷歌提供的</a> <span class="notranslate">Android</span> 平台的<a href="https://developer.android.com/reference/android/Manifest.permission.html">文档</a>，或者，如果你使用的是第三方SDK，则查看SDK附带的文档。要添加一个新的权限，你需要点击<img> 按钮来添加一个占位符权限，然后双击<img> ，将其编辑成所需的内容。你可以使用<img> 按钮删除权限。</li>
+    <li class="dropspot"><b>代码注入</b>。在这里你可以添加任何代码，当你的游戏被构建为测试或最终发布时，将被注入（添加）到你的<span class="notranslate">Android</span> 应用程序。在向商店提交任何游戏之前，请确保仔细修改这个（和你的权限），因为不正确的设置将导致你的游戏提交失败。更多信息见下面的章节。</li>
   </ul>
-  <h2 id="h">Code Injection</h2>
-  <p>Any code entered into the &quot;Code Injection&quot; window will need to be separated into distinct XML groups, as shown in the screenshot above. The XML tag you use for a group will determine where the code is injected into your application.</p>
-  <p>You can use the following syntax to create code injection groups:</p>
+  <h2 id="h">代码注入</h2>
+  <p>任何输入到 &quot;代码注入 &quot;窗口的代码都需要被分成不同的XML组，如上面的截图所示。你为一个组使用的XML标签将决定代码被注入你的应用程序的位置。</p>
+  <p>你可以使用以下语法来创建代码注入组。</p>
   <p class="code">&lt;YYTagName&gt;<br />
     <br />
     // Code to inject<br />
     <br />
     &lt;/YYTagName&gt;
   </p>
-  <p>The following tags are available for the Android platform:</p>
+  <p>以下标签可用于<span class="notranslate">Android</span> 平台。</p>
   <p class="code">YYAndroidTopLevelGradle<br />
     YYAndroidTopLevelGradleBuildscript<br />
     YYAndroidTopLevelGradleBuildscriptRepositories<br />
@@ -54,10 +54,9 @@
     YYAndroidManifestApplicationInject<br />
     YYAndroidStringValuesInjection<br />
     YYAndroidLayout<br />
-    YYAndroidProguard<br />
-    YYAndroidLogcat
+    <span>YYAndroidProguard</span>
   </p>
-  <p>The runtime location where the code is injected will depend on the type of the tag:</p>
+  <p><span class="notranslate">runtime</span> ，代码被注入的位置将取决于标签的类型。</p>
   <table>
     <colgroup>
       <col style="width: 174px;" />
@@ -65,56 +64,45 @@
     </colgroup>
     <tbody>
       <tr>
-        <th style="">Tag Type</th>
-        <th style="">Injection Path</th>
+        <th style="">标签类型</th>
+        <th style="">注射路径</th>
       </tr>
       <tr>
-        <td style=""><strong>Top Level Gradle</strong></td>
-        <td style="">{RUNTIME}\android\runner\RootFiles\build.gradle</td>
+        <td style=""><strong>顶层的Gradle</strong></td>
+        <td style="">{RUNTIME}/android/runner/RootFiles/build.gradle</td>
       </tr>
       <tr>
-        <td style=""><strong>Module Level Gradle</strong></td>
-        <td style="">{RUNTIME}\android\runner\ProjectFiles\build.gradle</td>
+        <td style=""><strong>模块级Gradle</strong></td>
+        <td style="">{RUNTIME}/android/runner/ProjectFiles/build.gradle</td>
       </tr>
       <tr>
-        <td style=""><strong>Android Manifest</strong></td>
-        <td style="">{RUNTIME}\android\runner\ProjectFiles\src\main\AndroidManifest.xml</td>
+        <td style=""><strong>安卓指令</strong></td>
+        <td style="">{RUNTIME}android\runner\ProjectFiles\src\main\AndroidManifest.xml</td>
       </tr>
       <tr>
-        <td style=""><strong>Strings</strong></td>
-        <td style="">{RUNTIME}\android\runner\ProjectFiles\src\main\res\values\strings.xml</td>
+        <td style=""><strong>弦乐</strong></td>
+        <td style="">{RUNTIME}android/runner/ProjectFiles/src/main/res/values/strings.xml</td>
       </tr>
       <tr>
-        <td style=""><strong>Layout</strong></td>
-        <td style="">{RUNTIME}\android\runner\ProjectFiles\src\main\res\layout\main.xml</td>
+        <td style=""><strong>布局</strong></td>
+        <td style="">{RUNTIME}android\runner\ProjectFiles\src\main\reslayout\main.xml</td>
       </tr>
     </tbody>
   </table>
-  <p class="note"><span class="note">NOTE</span> These paths are only for VM; for YYC, injected code will go into the <span class="inline">{RUNTIME}\yyc\</span> directory, where the paths may or may not be equivalent to those for VM.</p>
-  <h3>Usage Tips</h3>
-  <ul class="colour">
-    <li>You can use <span class="inline2">YYAndroidLogcat</span> to use custom logging tags with <a href="https://developer.android.com/studio/command-line/logcat">Logcat</a>. Set up your tag with a priority level, e.g.:<br />
-      <br />
-      <span class="inline2">&lt;YYAndroidLogcat&gt;</span><br />
-      <span class="inline2">myDebugTag:V</span><br />
-      <span class="inline2">&lt;/YYAndroidLogcat&gt;</span><br />
-      <br />
-      In your extension, use a logging function to log a message with this tag, e.g. <span class="inline2">Log.i(&quot;myDebugTag&quot;, &quot;Hello World&quot;);</span>
-    </li>
-  </ul>
-  <h2>Source Files</h2>
-  <p>Once you have set this up correctly, you will need to add the files required for your extension package to work. To do this you need to click on the buttons at the bottom, either <em>Add SDK</em> or <em>Add Source</em> and then browse to the files you wish to add. Added files will be stored in the <span class="inline">AndroidSource</span> directory along with your extension. You can open this location at any time by right clicking <img alt="RMB Icon" class="icon" src="../../assets/Images/Icons/Icon_RMB.png" /> on the extension and selecting <em>Open in Explorer</em>.</p>
-  <p>For information on your creating native extensions for Android, see <a href="Extended_Examples.htm">Source Examples</a>.</p>
-  <p> </p>
-  <p> </p>
+  <p class="note"><span class="note">注意</span>这些<span class="notranslate">paths</span> 仅用于 VM；对于 YYC，注入的代码将进入 <span class="inline">{RUNTIME}\yyc\</span> 目录，那里的<span class="notranslate">paths</span> 可能与 VM 的 不相等。</p>
+  <h2>源文件</h2>
+  <p>一旦你设置正确，你将需要添加你的<span class="notranslate">extension</span> 包工作所需的文件。要做到这一点，你需要点击底部的按钮，<em>添加SDK</em>或<em>添加源代码</em>，然后浏览你想要添加的文件。添加的文件将和你的<span class="notranslate">extension</span> 一起存储在 <span class="inline">AndroidSource</span> 目录中。你可以在任何时候通过右击<img> ，选择<em>在资源管理器中打开</em>这个位置<span class="notranslate">extension</span> 。</p>
+  <p>关于你为<span class="notranslate">extensions</span> 创建本地<span class="notranslate">Android</span> ，请看<a href="Extended_Examples.htm">源码实例</a>。</p>
+  <p> </p>
+  <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../Extensions.htm">The Extension Editor</a></div>
-        <div style="float:right">Next: <a href="iOS_Extensions.htm">iOS Extensions</a></div>
+        <div style="float:left">返回。<a href="../Extensions.htm"> <span class="notranslate">Extension</span> 编辑</a></div>
+        <div style="float:right">下一篇：<a href="iOS_Extensions.htm">iOS扩展</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2022 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span> 2022 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 Android Extensions

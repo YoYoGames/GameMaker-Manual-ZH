@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>window_set_fullscreen</title>
+  <title>窗口_设置为fullscreen</title>
   <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
-  <script src="../../../../assets/scripts/main_script.js" type="module"></script>
+  <script src="../../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Reference page for window_set_fullscreen" />
   <meta name="rh-index-keywords" content="window_set_fullscreen" />
@@ -14,28 +14,28 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>window_set_fullscreen</h1>
-  <p>With this function you can set the game window to be full screen (<span class="inline">true</span>) or not (<span class="inline">false</span>). Please note that for the <b>macOS</b> target, you <i>must</i> have unchecked the &quot;Start In Fullscreen&quot; option and checked the &quot;Allow the player to resize the game window&quot; option in the <a href="../../../../Settings/Game_Options.htm">Game Options</a>, otherwise this function will fail. Also note that this function will <i>not</i> work on HTML5 unless it&#39;s added in as a &quot;clickable&quot; callback (see <a href="../../Web_And_HTML5/clickable_add.htm">here</a> for more details).</p>
-  <p> </p>
-  <h4>Syntax:</h4>
+  <h1>窗口_设置为fullscreen</h1>
+  <p>通过这个功能，你可以将游戏窗口设置为全屏(<span class="inline">true</span>)或不设置(<span class="inline">false</span>)。请注意，对于<b>macOS</b>目标，你<i>必须</i>取消勾选 &quot;在全屏下开始 &quot;选项，并在<a href="../../../../Settings/Game_Options.htm">游戏选项</a>中勾选 &quot;允许玩家调整游戏窗口大小 &quot;选项，否则该功能将失败。还要注意的是，这个功能在HTML5上是<i>不</i>工作的，除非它被添加到 &quot;可点击 &quot;回调中（更多细节见<a href="../../Web_And_HTML5/clickable_add.htm">这里</a>）。</p>
+  <p> </p>
+  <h4>语法。</h4>
   <p class="code">window_set_fullscreen(full);</p>
   <table>
     <tbody>
       <tr>
-        <th>Argument</th><th>Type</th>
-        <th>Description</th>
+        <th>争论</th><th>类型</th>
+        <th>描述</th>
      </tr>
       <tr>
-        <td>full</td><td><span data-keyref="Type_Bool"></span></td>
-        <td>Whether to set the screen to fullscreen (true) or not (false).</td>
+        <td><span class="notranslate">full</span></td><td><span data-keyref="Type_Bool"></span></td>
+        <td><span class="notranslate">Whether to set the screen to fullscreen (true) or not (false).</span></td>
      </tr>
     </tbody>
   </table>
-  <p> </p>
-  <h4>Returns:</h4>
+  <p> </p>
+  <h4>返回。</h4>
   <p class="code"><span data-keyref="Type_Void"></span></p>
-  <p> </p>
-  <h4>Example:</h4>
+  <p> </p>
+  <h4>例子。</h4>
   <p class="code">if mouse_check_button_pressed(mb_left)<br />
     {<br />
         if window_get_fullscreen()<br />
@@ -47,18 +47,18 @@
             window_set_fullscreen(true);<br />
         }<br />
     }</p>
-  <p>The above code checks for a mouse button press and then sets the window to fullscreen if it is not already, or sets it to windowed if it is already.</p>
-  <p> </p>
-  <p> </p>
-  <p> </p>
+  <p>上面的代码检查鼠标按键是否被按下，如果还没有被按下，则将窗口设置为全屏，如果已经被按下，则将其设置为窗口。</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Back: <a href="../The_Game_Window/The_Game_Window.htm">The Game Window</a></div>
-        <div style="float:right">Next: <a href="../The_Game_Window/window_set_position.htm">window_set_position</a></div>
+        <div style="float:left">返回。<a href="../The_Game_Window/The_Game_Window.htm">游戏窗口</a></div>
+        <div style="float:right">下一步。 <a href="../The_Game_Window/window_set_position.htm"><span class="notranslate">window_set_position</span></a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2021 All Rights Reserved</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span> 2021 All Rights Reserved</span></h5>
   </div>
   <!-- KEYWORDS
 window_set_fullscreen
