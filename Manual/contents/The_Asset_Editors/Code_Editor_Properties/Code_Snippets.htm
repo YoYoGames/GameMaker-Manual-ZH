@@ -2,62 +2,62 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Code Snippets</title>
-    <meta name="generator" content="Adobe RoboHelp 2020"/>
-    <link rel="stylesheet" href="../../assets/css/default.css" type="text/css"/>
-    <script src="../../assets/scripts/main_script.js" type="module"></script>
-    <meta name="rh-authors" content="Mark Alexander"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>代码摘录</title>
+    <meta name="generator" content="Adobe RoboHelp 2020" />
+    <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+    <script src="../../assets/scripts/main_script.js"></script>
+    <meta name="rh-authors" content="Mark Alexander" />
     <meta name="topic-comment" content="Page detailing how to create your own code snippets
-"/>
-    <meta name="rh-index-keywords" content="Code Editor - Snippets"/>
-    <meta name="search-keywords" content="snippet,snippets,code snippets"/>
+" />
+    <meta name="rh-index-keywords" content="Code Editor - Snippets" />
+    <meta name="search-keywords" content="snippet,snippets,code snippets" />
   </head>
   <body><!--<div class="body-scroll" style="top: 150px;">-->
-    <h1>Code Snippets</h1>
-    <p>A very handy tool you have at your disposal when editing your code is the use of <strong>Code Snippets</strong>. When using the script editor, you can press <span class="inline">F4</span> to open the code snippet pop-up, which permits you to select one of the commonly used code methods from a list:</p>
-    <p><img alt="Code Snippets Window" class="center" src="../../assets/Images/Asset_Editors/CodeSnippets_IDE.png"/>From this window you can select with the mouse the snippet to use, or you can press the associated hotkey listed on the right. This will add the snippet to your code for editing.</p>
-    <p>You can also define your own code snippets if you want to. Before doing this, you&#39;ll need to create a file called &quot;<span class="inline">snippets.txt</span>&quot; in one of the following directories:</p>
+    <h1>代码摘录</h1>
+    <p>在编辑代码时，你有一个非常方便的工具，就是使用<strong>代码</strong>片段。当使用<span class="notranslate">script</span> 编辑器时，你可以按 <span class="inline">F4</span> 来打开代码片段弹出窗口，它允许你从列表中选择一个常用的代码方法。</p>
+    <p><img>在这个窗口中，你可以用鼠标选择要使用的片段，或者你可以按下右边列出的相关热键。这将把该片段添加到你的代码中进行编辑。</p>
+    <p>如果你想的话，你也可以定义你自己的代码片断。在这样做之前，你需要在以下目录之一创建一个名为 &quot;<span class="inline">snippets.txt</span>&quot; 的文件。</p>
     <ul class="colour">
-      <li>Windows: <span class="inline">%ProgramData%\GameMaker\User\</span></li>
-      <li>macOS: <span class="inline">/Users/Shared/GameMaker/User/</span></li>
+      <li>窗口。 <span class="inline">%ProgramData%\GameMaker\User\</span></li>
+      <li>macOS。 <span class="inline">/Users/Shared/GameMaker/User/</span></li>
     </ul>
-    <p>This folder is <em>not </em>modified during any update to <span data-keyref="GameMaker Name">GameMaker</span>, so your edited file will remain intact (but any edits to the base snippets file in the install directory will be reverted).</p>
-    <p>Once the file is created in the User directory, you can edit it with any text editor following these rules:</p>
+    <p>这个文件夹在<span data-keyref="GameMaker Name">GameMaker</span>的任何更新中都<em>不会 </em>被修改，所以你编辑的文件将保持不变（但对安装目录中的基本片段文件的任何编辑都将被恢复）。</p>
+    <p>一旦在用户目录下创建了文件，你可以按照这些规则用任何文本编辑器来编辑它。</p>
     <ul class="colour">
-      <li>Each snippet has to be on a separate line (there should be no blank lines)</li>
-      <li>Each snippet must start with the hotkey to be used followed by &quot;<span class="inline">-</span>&quot; and then the name of the snippet (which is what is shown in the menu) followed by a colon &quot;<span class="inline">:</span>&quot;, eg:</li>
+      <li>每个片段必须在一个单独的行上（不应该有空行）。</li>
+      <li>每个片段必须以要使用的热键开头，后面是 &quot;<span class="inline">-</span>&quot;，然后是片段的名称（也就是菜单中显示的内容），后面是冒号 &quot;<span class="inline">:</span>&quot;，例如。</li>
     </ul>
-    <p class="code" style="margin-left: 100px">I - Instance Create:</p>
-    <p style="margin-left: 60px">After the colon you add the snippet of code</p>
-    <p class="code" style="margin-left: 100px">I - Instance Create:instance_create_layer(x, y, |layer|, object);</p>
-    <p>The code that you add must also follow a specific format where:</p>
+    <p class="code" style="margin-left: 100px">I - 实例创建。</p>
+    <p style="margin-left: 60px">在冒号之后，你要添加以下代码片段</p>
+    <p class="code" style="margin-left: 100px">I - 实例创建：instance_create_layer(x, y, |layer|,<span class="notranslate">object</span>)。</p>
+    <p>你添加的代码也必须遵循一个特定的格式，其中。</p>
     <ul class="colour">
-      <li>All code is on a single line</li>
-      <li>You use &quot;<span class="inline">$</span>&quot; for a newline
+      <li>所有的代码都在单行上</li>
+      <li>你用 &quot;<span class="inline">$</span>&quot; 表示换行
         <ul>
-          <li><span class="note">NOTE</span> When creating multiple newlines, there needs to be a space between each &quot;<span class="inline">$</span>&quot; sign. For example, you would write <span class="inline2">$ $ $</span> to add three newlines.</li>
+          <li><span class="note">注意</span>当创建多个换行时，每个 &quot;<span class="inline">$</span>&quot;符号之间需要有一个空格。例如，你可以写<span class="inline2">$$$</span>来添加三个换行。</li>
         </ul>
       </li>
-      <li>You put the text that needs to be highlighted between &quot;<span class="inline">|</span>&quot; symbols. The Code Editor will automatically select this text for editing when the snippet is added.</li>
+      <li>你把需要突出显示的文本放在 &quot;<span class="inline">|</span>&quot; 符号之间。代码编辑器将在添加代码片段时自动选择该文本进行编辑。</li>
     </ul>
-    <p>See the examples that are already in the base snippets file to see how it is set up following the rules above. You can find the base file in the <span data-keyref="GameMaker Name">GameMaker</span> install directory:</p>
+    <p>请看已经在基础片段文件中的例子，看看它是如何按照上述规则设置的。你可以在<span data-keyref="GameMaker Name">GameMaker</span>安装目录下找到基础文件。</p>
     <ul class="colour">
-      <li>Windows: <span class="inline"><span data-keyref="GameMaker Name">GameMaker</span>\TextEditor\snippets.txt</span></li>
-      <li>macOS: <span class="inline">/Applications/<span data-keyref="GameMaker Name">GameMaker</span>.app/Contents/MonoBundle/TextEditor/snippets.txt</span></li>
+      <li>Windows。 <span class="inline"><span data-keyref="GameMaker Name">GameMaker</span>\TextEditor\snippets.txt</li>
+      <li>macOS: <span class="inline">/Applications/<span data-keyref="GameMaker Name">GameMaker</span>.app/Contents/MonoBundle/textEditor/snippets.txt</li>
     </ul>
-    <p><img alt="Code Snippets Example" class="center" src="../../assets/Images/Asset_Editors/CodeSnippets_Example.png"/></p>
-    <p> </p>
-    <p> </p>
-    <p> </p>
+    <p><img alt="Code Snippets Window" class="center" src="../../assets/Images/Asset_Editors/CodeSnippets_IDE.png"/></p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
     <div class="footer">
       <div class="buttons">
         <div class="clear">
-          <div style="float:left">Back: <a href="../Scripts.htm">The Script Editor</a></div>
-          <div style="float:right">Next: <a href="Editing_Code.htm">Editing Code</a></div>
+          <div style="float:left">返回。<a href="../Scripts.htm"> <span class="notranslate">Script</span> 编辑</a></div>
+          <div style="float:right">下一步。<a href="Editing_Code.htm">编辑代码</a></div>
         </div>
       </div>
-      <h5><span data-keyref="Copyright Notice">© Copyright YoYo Games Ltd. 2022 All Rights Reserved</span></h5>
+      <h5><span data-keyref="Copyright Notice">© Copyright<span class="notranslate">YoYo Games Ltd.</span> 2022 All Rights Reserved</span></h5>
     </div>
     <!-- KEYWORDS
 Snippets
