@@ -39,7 +39,7 @@
   <p> </p>
   <h4>例子。</h4>
   <p class="code">ini_open(&quot;Save.ini&quot;);<br />
-    buff = buffer_base64_decode(ini_read_string(&quot;Save&quot;, &quot;Slot1&quot;, &quot;&quot;));<br />
+    buff = <span data-field="title" data-format="default">buffer_base64_decode</span>(ini_read_string(&quot;Save&quot;, &quot;Slot1&quot;, &quot;&quot;));<br />
     ini_close();</p>
   <p>上面的代码将打开一个ini文件，然后从其中读取一个<span class="notranslate">string</span> ，进入解码函数。该函数将返回一个<span class="notranslate">buffer</span> 索引，该索引被存储在变量 &quot;buff &quot;中，其中包含先前编码和保存的数据。然后，ini文件被关闭。</p>
   <p> </p>

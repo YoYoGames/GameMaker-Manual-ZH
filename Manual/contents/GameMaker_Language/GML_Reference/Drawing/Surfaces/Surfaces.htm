@@ -27,7 +27,7 @@
     <li>第三，你应该<b>只在绘制事件中创建曲面</b>。如果你在实例的创建事件中创建了一个曲面，你可能会得到与 <span class="inline">application_surface</span><i>相同的</i>索引。这可能会造成很多问题和混乱，因为你认为你在使用自己的曲面，但实际上你在使用当前的渲染目标。你也应该尽量在draw事件中限制对曲面的<i>绘制</i>，因为<span data-keyref="GameMaker Name">GameMaker</span>对屏幕的绘制方式是最优化的，建议你把所有的绘制功能<i>放在draw事件中</i>--这包括在第一次创建曲面时清除它，等等。在绘制事件之外绘制表面是可能的，对于某些效果来说甚至是必要的，但这不是<em>应该</em>做的。</li>
     <li>第四，在手动绘制曲面时，曲面<i>总是</i>在(0,0)的位置。这意味着你可能需要将<em>绝对</em>坐标转换为曲面的<em>相对</em>坐标。例如，如果你有一个相机大小的曲面，并希望在该曲面上绘制当前在相机中可见的东西，你应该用相机视图的x和y坐标减去实际的x和y坐标，得到与曲面(0,0)位置的相对位置。所以，代码看起来会是这样的。</li>
   </ul>
-  <p class="code">if view_current = 0<br />
+  <p class="code">if view_current == 0<br />
     {<br />
         surface_set_target(surf);<br />
         with (obj_Effect)<br />

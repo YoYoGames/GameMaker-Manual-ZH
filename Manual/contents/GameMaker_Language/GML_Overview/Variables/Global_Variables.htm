@@ -24,19 +24,19 @@
   <p>通过全局变量，我们可以改变数值，并看到这些变化反映在所有引用该变量的<span class="notranslate">objects</span> 实例中。和<i>局部变量</i>一样，你必须注意不要把你的全局变量的名字和任何实例变量的名字一样，因为这可能会给你带来问题，并且由于变量的重叠而使错误悄悄进入你的游戏，这有时是一个很难调试的问题。一般来说，你应该在游戏开始时（例如，在游戏的第一个对象实例的<a href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm">房间开始事件</a>中<span class="notranslate">object</span> ）有一个单一的<span class="notranslate">room</span> ，声明你所有的全局变量，或者有一个单一的<a href="../Script_Functions.htm">脚本函数</a>来声明它们，因为这给你一个方便的地方，如果你需要检查一个变量的名称或编辑一个值，可以一次性地引用所有的变量。</p>
   <p><span data-keyref="GameMaker Name">GameMaker</span>也有一系列 &quot;内置 &quot;的全局变量，所以你应该注意它们，因为你可能会把你的一个实例变量命名为相同的名字，或者希望有你自己的全局变量有相同的名字，并想知道为什么你会得到错误！但是，它们很容易被发现，因为它们在代码编辑器中显示为不同的颜色，并在底部的自动完成栏中出现。然而，它们很容易被发现，因为它们在代码编辑器中以不同的颜色显示，也会出现在底部的自动完成栏中。大多数内置的全局变量都有非常具体的用途，在手册的相应章节中列出 - 但是有两个重要的全局变量经常使用，而且没有在其他地方列出。</p>
   <ul class="colour">
-    <li><a href="Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a></li>
+    <li><span class="inline"><a data-xref="{title}" href="Builtin_Global_Variables/async_load.htm">async_load</a></span></li>
     <li><span class="inline"><a data-xref="{title}" href="../../GML_Reference/Game_Input/Gesture_Input/event_data.htm">event_data</a></span></li>
   </ul>
   <p>还有三个<b>废弃的</b>内置全局变量，你应该知道（这些变量只是为了支持<span class="notranslate">GameMaker</span> 以前版本的遗留项目而设计的，并且应该 <b><i>不能在新项目中使用</i></b>):</p>
   <ul class="colour">
-    <li><a href="Builtin_Global_Variables/score.htm"><span class="inline">score</span></a></li>
-    <li><a href="Builtin_Global_Variables/health.htm"><span class="inline">health</span></a></li>
-    <li><a href="Builtin_Global_Variables/lives.htm"><span class="inline">lives</span></a></li>
+    <li><span class="inline"><a data-xref="{title}" href="Builtin_Global_Variables/score.htm">score</a></span></li>
+    <li><span class="inline"><a data-xref="{title}" href="Builtin_Global_Variables/health.htm">health</a></span></li>
+    <li><span class="inline"><a data-xref="{title}" href="Builtin_Global_Variables/lives.htm">lives</a></span></li>
   </ul>
   <p>最后，有两个变量可用于<span class="notranslate">script</span> 函数和方法。</p>
   <ul class="colour">
-    <li><span class="inline"><a href="Builtin_Global_Variables/argument.htm">argument</a></span></li>
-    <li><span class="inline"><a href="Builtin_Global_Variables/argument_count.htm">argument_count</a></span></li>
+    <li><a data-xref="{title}" href="Builtin_Global_Variables/argument.htm">argument</a></li>
+    <li><a data-xref="{title}" href="Builtin_Global_Variables/argument_count.htm">argument_count</a></li>
   </ul>
   <p>下面的形式也可以用来声明全局变量，但它是 <i><b>只是为了向后兼容而包括在内</b></i>，不建议你在新项目中使用这种形式，因为未来版本的<span class="notranslate">GameMaker</span> 可能不支持它。</p>
   <p>创建全局变量的第二种形式是使用 <span class="inline">globalvar</span> 声明，就像使用 <span class="inline">var</span> 声明一个局部变量一样，将它们声明为全局变量。</p>
