@@ -49,7 +49,7 @@
     <li>设置<span class="notranslate">sequence</span> <span class="notranslate">object</span> 顶层值，如长度、播放模式、播放速度等。比如说</li>
   </ul>
   <p class="code">myseq.length = 120;<br />
-    myseq.loopmode = seqplay_pingpong</p>
+    myseq.loopmode = seqplay_pingpong;</p>
   <ul class="colour">
     <li>在添加轨道到<span class="notranslate">sequence</span> <span class="notranslate">object</span> ，你需要创建它们，所以你现在要创建一个<i>资产</i>轨道的数组，这些轨道已经用函数定义了 <a href="sequence_track_new.htm"><span class="inline">sequence_track_new()</span></a>.请注意，在代码中，<span class="notranslate">asset</span> 轨道和参数轨道之间其实没有什么区别--它们都是简单的轨道，它们的行为方式将取决于你创建的轨道类型，以及它们是否被分配为顶级轨道的子轨道。因此，你可以为一个<span class="notranslate">asset</span> ，然后为不同的参数分配子轨道，这些子轨道将作为<span class="notranslate">asset</span> 的<i>参数</i>轨道。下面的例子创建了一个单一的图形<span class="notranslate">asset</span> 轨道，以后会被添加到<span class="notranslate">sequence</span> 。</li>
   </ul>
@@ -61,21 +61,25 @@
   <p class="code">// Create a new keyframe struct for a graphics asset track and add it to an array (as you can have multiple keys in a frame)<br />
     var graphickeys = array_create(1);<br />
     graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic);<br />
-    // Set the graphics keyframe top level data for the keyframe position and length, etc...<br />
+    // Set the graphics keyframe top level data for the keyframe position and length, etc.<br />
     graphickeys[0].frame = 0;<br />
     graphickeys[0].length = 1;<br />
     graphickeys[0].stretch = true;<br />
     graphickeys[0].disabled = false;<br />
+    <br />
     // Create the channel data that will go into this keyframe (again an array, as each key can have multiple channels of keyframe data)<br />
     var graphickeydata = array_create(1);<br />
     graphickeydata[0] = sequence_keyframedata_new(seqtracktype_graphic);<br />
     graphickeydata[0].spriteIndex = spr_Platform;<br />
     graphickeydata[0].channel = 0;<br />
+    <br />
     // Add the keyframe data channels to the graphics track keyframe<br />
     graphickeys[0].channels = graphickeydata;<br />
+    <br />
     // Add the definied keyframes to the track<br />
     mytracks[0].name = &quot;TestGraphicTrack&quot;;<br />
-    mytracks[0].keyframes = graphickeys;</p>
+    mytracks[0].keyframes = graphickeys;
+  </p>
   <ul class="colour">
     <li>我们现在需要创建一个参数轨道，将其作为子轨道分配给我们刚刚创建的图形轨道。这将以类似于上文所示的方式完成，只是现在我们需要给轨道起一个显示其用途的名字，在这里是 &quot;位置&quot;，因为我们将使用这个轨道来在<span class="notranslate">sequence</span> 动画帧的过程中移动图形轨道。</li>
   </ul>
@@ -90,14 +94,17 @@
     paramkeys[0].frame = 0;<br />
     paramkeys[1] = sequence_keyframe_new(seqtracktype_real);<br />
     paramkeys[1].frame = 120;<br />
+    <br />
     // Create the keyframe data structs<br />
     var paramkeydata1 = array_create(2);<br />
     paramkeydata1[0] = sequence_keyframedata_new(seqtracktype_real);<br />
     paramkeydata1[0].channel = 0; // Channel 0 for a position track is the X position<br />
     paramkeydata1[0].value = 0;<br />
+    <br />
     paramkeydata1[1] = sequence_keyframedata_new(seqtracktype_real);<br />
     paramkeydata1[1].channel = 1; // Channel 1 for a position track is the Y position<br />
     paramkeydata1[1].value = 0;<br />
+    <br />
     var paramkeydata2 = array_create(2);<br />
     paramkeydata2[0] = sequence_keyframedata_new(seqtracktype_real);<br />
     paramkeydata2[0].channel = 0;<br />
@@ -105,11 +112,14 @@
     paramkeydata2[1] = sequence_keyframedata_new(seqtracktype_real);<br />
     paramkeydata2[1].channel = 1;<br />
     paramkeydata2[1].value = room_height;<br />
+    <br />
     // Assign the keyframe data structs to the channels for each key<br />
     paramkeys[0].channels = paramkeydata1;<br />
     paramkeys[1].channels = paramkeydata2;<br />
+    <br />
     // Assign the keys to the parameter track<br />
-    paramtracks[0].keyframes = paramkeys;</p>
+    paramtracks[0].keyframes = paramkeys;
+  </p>
   <ul class="colour">
     <li>完成这些后，最后要做的是将参数轨道作为子轨道分配给我们一开始创建的主要图形<span class="notranslate">asset</span> ，然后将这些轨道分配给<span class="notranslate">sequence</span> ，然后我们可以在房间里创建一个实例。</li>
   </ul>

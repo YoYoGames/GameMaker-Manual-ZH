@@ -48,6 +48,10 @@
         <td><span class="notranslate"><span class="inline">bboxkind_precise</span></td>
         <td>一个精确的碰撞掩码，该掩码将符合<span class="notranslate">sprite</span> ，基于给定的公差值（见下文）的非透明像素）。</td>
       </tr>
+      <tr>
+        <td><span class="inline">bboxkind_spine</span></td>
+        <td>Apart from rectangle, this is the only valid option for Spine sprites. It enables more precise collision checking against the mesh in the sprite.</td>
+      </tr>
     </tbody>
   </table>
   <p><br>
@@ -133,6 +137,11 @@
   </div>
   <!-- KEYWORDS
 sprite_collision_mask
+bboxkind_precise
+bboxkind_diamond
+bboxkind_ellipse
+bboxkind_rectangular
+bboxkind_spine
 -->
   <!-- TAGS
 sprite_collision_mask

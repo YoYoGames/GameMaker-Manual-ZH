@@ -200,7 +200,7 @@
     <p class="dropspot">在写入<span class="notranslate">buffer</span> 之前，我们将 &quot;告诉 &quot;设置为<span class="notranslate">buffer</span> 的开头，因为网络总是从<span class="notranslate">buffer</span> 的开头获取数据。然后我们写下检查值（这将被<span class="notranslate">server</span> 用来确定要处理的事件类型），然后是正在使用的键，然后是键的状态（在这种情况下，真表示按下）。这个<span class="notranslate">buffer</span> ，然后由网络函数作为一个数据包发送。请注意，我们不发送整个<span class="notranslate">buffer</span>!我们只发送所写的数据，使用buffer_tell函数来返回<span class="notranslate">buffer</span> 的当前读写位置（记住，向<span class="notranslate">buffer</span> 写入时，&quot;tell &quot;会移动到所写内容的末端）。这只是为了避免发送超过必要的字节数。</p>
     <p class="dropspot"><span class="notranslate">server</span> 那么在<span class="notranslate">buffer</span> 上接收数据呢？收到的数据包必须写进<span class="notranslate">server</span> ，然后用于更新游戏。为此，我们将在<span class="notranslate">object</span> 的网络控制器<span class="notranslate">server</span> 中使用<a href="../The_Asset_Editors/Object_Properties/Async_Events.htm">网络异步事件</a>，正如下面的简化代码所示。</p>
     <p class="code">var buff = ds_map_find_value(async_load, &quot;buffer&quot;);<br />
-      if cmd == buffer_read(buff, buffer_u8);<br />
+      if (cmd == buffer_read(buff, buffer_u8)) <br />
       {<br />
           key = buffer_read(buff, buffer_s16);<br />
           key_state = buffer_read(buff, buffer_bool);<br />

@@ -38,7 +38,7 @@
   <h4>例子。</h4>
   <p class="code">if keyboard_check_pressed(ord(&quot;L&quot;))<br />
     {<br />
-        if global.Checkpoint game_load_buffer(save_buff);<br />
+        if (global.Checkpoint) game_load_buffer(save_buff);<br />
     }</p>
   <p>上述代码将从变量 &quot;save_buff &quot;中索引的<span class="notranslate">buffer</span> ，只有当全局变量是 <span class="inline">true</span> ，当玩家按下 &quot;L &quot;键时，才会加载先前保存的游戏状态。</p>
   <p> </p>

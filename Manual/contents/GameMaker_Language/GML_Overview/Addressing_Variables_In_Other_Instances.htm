@@ -27,7 +27,7 @@
   <p>然而，到目前为止，最常见和最实用的方法是在点的左边使用一个<i>变量</i>，只要该变量<i> 存储了一个有效的<b>实例id</b></i>。下面的例子说明了这一点。</p>
   <p class="code">// Example 1<br />
     var _inst = instance_position(mouse_x, mouse_y, all);<br />
-    if instance_exists(_inst)<br />
+    if (instance_exists(_inst)) <br />
     {<br />
         _inst.speed = 0;<br />
     }<br />
@@ -40,7 +40,7 @@
   <p>在上面例1的代码中，有一个 <a href="../GML_Reference/Asset_Management/Instances/instance_exists.htm"><span class="inline">instance_exists()</span></a>调用的代码块中。这是因为使用point方法来访问或改变另一个实例的值，如果该实例不存在，就会出现错误并使游戏崩溃，而在这个例子中就有可能是这样的情况。然而在例2和例3中我们不需要检查，因为我们<i>知道</i>实例是存在的，因为在例2中我们创建了它，而在例3中，它是碰撞事件中的另一个实例。然而，如果在使用这个方法时，实例<i>有</i>可能被销毁、停用或以其他方式从<span class="notranslate">room</span> ，你<i>应该</i>事先使用 <span class="inline">instance_exists()</span> 函数或 <a href="../GML_Reference/Asset_Management/Instances/instance_number.htm"><span class="inline">instance_number()</span></a>函数。</p>
   <p>请注意，你不能用这个方法使用特殊的<a href="Instance_Keywords.htm">关键字</a>&quot;<span class="inline">all</span>&quot; 来针对所有的实例（例如： <span class="inline">all.val = 10</span> 会产生一个错误），但你<i>可以</i>使用关键字 &quot;<span class="inline">other</span>&quot; 和 &quot;<span class="inline">self</span>&quot; 而不会有问题。例如，在一个<a href="../../The_Asset_Editors/Object_Properties/Object_Events.htm">碰撞事件</a>中使用 <span class="inline">other</span> 。</p>
   <p class="code">// Example 3 other.hp -= 10;<br />
-    if other.hp &lt;= 0<br />
+    if (other.hp &lt;= 0)<br />
     {<br />
         other.sprite_index = spr_E_Dead;<br />
     }</p>
@@ -51,8 +51,8 @@
     <br />
     //or<br />
     <br />
-    var inst = instance_nearest(x, y, obj);<br />
-    inst.speed = 0;
+    var _inst = instance_nearest(x, y, obj);<br />
+    _inst.speed = 0;
   </p>
   <p>这些都是读取、改变和设置其他实例中的变量的完全有效的方法，之所以有效是因为point实际上是一个<i>操作符</i>。它把一个值作为左<a class="glossterm" data-glossterm="操作符" href="#">操作数</a>，把一个变量作为右操作数，并返回这个特定变量在指定<span class="notranslate">object</span> 或实例中的地址。所有的<span class="notranslate">object</span> 名称、常量、ID等等......都只是代表值，这些都可以像其他值一样被处理。</p>
   <p>另一种引用另一个实例中的变量的方法是使用<span class="notranslate">GameMaker Language</span> 函数 <span class="inline">with()</span> ，<a href="Language_Features/with.htm">这里</a>将详细讨论这个方法。</p>
@@ -64,7 +64,7 @@
     <br />
     // This will affect one instance of the object &quot;obj_Enemy&quot;<br />
     var _enemy = instance_nearest(x, y, obj_Enemy);<br />
-    if instance_exists(_enemy)<br />
+    if (instance_exists(_enemy)) <br />
     {<br />
         with (_enemy)<br />
         {<br />

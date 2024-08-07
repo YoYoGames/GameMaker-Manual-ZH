@@ -60,7 +60,7 @@
   <p>上述代码将文件 &quot;<i>Player_Save.sav</i>&quot; 的内容加载到给定的<span class="notranslate">buffer</span> ，在变量 &quot;<i>loadid</i>&quot; 中存储函数调用的 ID。当加载完成后，异步保存/加载事件将被触发，你可以解析 <span class="inline">async_load</span> 地图，以获得函数的正确ID，像这样。</p>
   <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == loadid<br />
     {<br />
-        if ds_map_find_value(async_load, &quot;status&quot;) == false<br />
+        if (ds_map_find_value(async_load, &quot;status&quot;) == false)<br />
         {<br />
             show_debug_message(&quot;Load failed!&quot;);<br />
         }<br />

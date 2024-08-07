@@ -45,9 +45,9 @@
   <p>以上将显示一个给定的消息<span class="notranslate">string</span> 。消息ID被存储在变量 &quot;msg &quot;中，并将在异步对话框事件中使用，如下所示。</p>
   <p class="code">var i_d, stat;<br />
     i_d = ds_map_find_value(async_load, &quot;id&quot;);<br />
-    if i_d == msg<br />
+    if (i_d == msg) <br />
     {<br />
-        if ds_map_find_value(async_load, &quot;status&quot;)<br />
+        if (ds_map_find_value(async_load, &quot;status&quot;)) <br />
         {<br />
             url_open(&quot;https://play.google.com/store&quot;);<br />
         }<br />

@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>show_question_async</title>
-  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <script src="../../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
@@ -45,9 +45,9 @@
   <p>以上将显示一个给定的问题<span class="notranslate">string</span> ，要求用户按 &quot;是 &quot;或 &quot;否&quot;。该函数ID存储在变量 &quot;msg &quot;中，并将在<a href="../../../../The_Asset_Editors/Object_Properties/Async_Events/Dialog.htm">异步对话事件</a>中使用，如下所示。</p>
   <p class="code">var i_d, stat;<br />
     i_d = ds_map_find_value(async_load, &quot;id&quot;);<br />
-    if i_d == msg<br />
+    if (i_d == msg) <br />
     {<br />
-        if ds_map_find_value(async_load, &quot;status&quot;)<br />
+        if (ds_map_find_value(async_load, &quot;status&quot;)) <br />
         {<br />
             coins -= armour[0,5];<br />
             global.protection += armour[0,0];<br />

@@ -78,13 +78,13 @@
   <p>然后，你要在异步<b>云事件</b>中检查返回的 <span class="inline">DS Map</span> ，以获得状态和返回的<span class="notranslate">string</span> ，如果有的话，用类似以下的代码。</p>
   <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == cloud_check<br />
     {<br />
-        if ds_map_find_value(async_load, &quot;status&quot;) &lt; 0<br />
+        if (ds_map_find_value(async_load, &quot;status&quot;) &lt; 0) <br />
         {<br />
             show_message_async(&quot;Cloud Services not available. Please check connectivity.&quot;);<br />
         }<br />
         else<br />
         {<br />
-            if ds_map_find_value(async_load, &quot;status&quot;) == 0<br />
+            if (ds_map_find_value(async_load, &quot;status&quot;) == 0) <br />
             {<br />
                 var file = file_text_open_write(&quot;Save.txt&quot;);<br />
                 file_text_write_string(file, ds_map_find_value(async_load, &quot;resultString&quot;));<br />

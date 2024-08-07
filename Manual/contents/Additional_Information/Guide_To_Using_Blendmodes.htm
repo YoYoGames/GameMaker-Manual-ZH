@@ -52,7 +52,7 @@
     <p class="dropspot">按照同样的规则，如果你想简单地把背景的亮度降低50%，那么你的颜色就是50%的红色、50%的绿色和50%的蓝色，即：RGB（128，128，128）。这种混合模式主要用于绘制阴影，或创造有趣的淡出效果。</p>
     <p class="dropspot"> </p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">bm_max</a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">bm_reverse_subtract</a></p>
   <div class="droptext" data-targetname="drop-down2">
     <p class="dropspot">这种混合模式解释起来比较复杂，但它基本上是将源颜色乘以源alpha，然后将它们加到目标颜色值上，再乘以逆源颜色值。bm_max（和其他混合模式）背后的实际数学原理，我们将在文章的第二部分介绍，但你需要知道的是，其结果将是一个更 &quot;饱和 &quot;和更明亮的颜色，而不会像使用 <span class="inline">bm_add</span> 那样导致纯白色的辉煌。</p>
     <p class="dropspot"><img>当你需要绘制重叠的图像时，这种混合模式可能很有用，因为它们不会变得太亮，以至于无法被看到。明亮的部分会变得更亮，但它们仍应保持一定的颜色和色调。但请注意，使用这种混合模式时，源图像的alpha值也会影响最终效果。</p>
@@ -99,17 +99,29 @@
     <p class="dropspot"><img>因此，我们的混合模式看起来像这样。</p>
     <p class="code">Source: (128, 255, 64, 255) = (0.5, 1, 0.25, 1)<br />
       Destination: (64, 128, 255, 255) = (0.25, 0.5, 1, 1)<br />
+      <br />
+      <strong>Factors:</strong><br />
       bm_src_alpha (As, As, As, As) = (255, 255, 255, 255) = (1, 1, 1, 1)<br />
       bm_inv_src_alpha (1-As, 1-As, 1-As, 1-As) =  (0, 0, 0, 0)<br />
+      <br />
+      <strong>Formula:</strong><br />
       (Rs,Gs,Bs,As) * bm_src_alpha + (Rd,Gd,Bd,Ad) * bm_inv_src_alpha<br />
+      <br />
+      <strong>Apply factors</strong>:<br />
       (0.5, 1, 0.25, 1) * (1, 1, 1, 1) + (0.25, 0.5, 1, 1) * (0, 0, 0, 0)<br />
       (0.5, 1, 0.25, 1) + (0, 0, 0, 0) = (0.5, 1, 0.25, 1) = (128, 255, 64, 255)</p>
     <p class="dropspot">正如你所看到的，我们把目标值乘以0，这样它们的值也是0，这意味着源颜色没有变化，所以我们的最终颜色值是<strong>（128, 255, 64, 255）</strong>。你可以看到阿尔法的加入也会影响这个值。</p>
     <p class="code">Source (128, 255, 64, 128) = (0.5, 1, 0.25, 0.5)<br />
       Destination: (64, 128, 255, 255) = (0.25, 0.5, 1, 1)<br />
+      <br />
+      <strong>Factors:</strong><br />
       bm_src_alpha (As, As, As, As) = (128, 128, 128, 128) = (0.5, 0.5, 0.5, 0.5)<br />
       bm_inv_src_alpha (1-As, 1-As, 1-As, 1-As) = (0.5, 0.5, 0.5, 0.5)<br />
+      <br />
+      <strong>Formula:</strong><br />
       (Rs,Gs,Bs,As) * bm_src_alpha + (Rd,Gd,Bd,Ad) * bm_inv_src_alpha<br />
+      <br />
+      <strong>Apply factors</strong>:<br />
       (0.5, 1, 0.25, 0.5) * (0.5, 0.5, 0.5, 0.5) + (0.25, 0.5, 1, 1) * (0.5, 0.5, 0.5, 0.5)<br />
       (0.25, 0.5, 0.125, 0.25) + (0.125, 0.25, 0.5, 0.5) = (0.375, 0.75, 0.625, 0.75) = (96, 192, 159, 192)</p>
     <p class="dropspot">这给出了最终的像素颜色（96，192，159，192），并将得到如下所示的图像。</p>

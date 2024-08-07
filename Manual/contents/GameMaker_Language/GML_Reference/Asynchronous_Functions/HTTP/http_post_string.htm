@@ -60,9 +60,9 @@
     post = http_post_string(&quot;http://www.angusgames.com/game?game_id=&quot; + string(global.game_id), str);</p>
   <p>上面的代码用给定的参数向指定的URL发送一个检索请求，同时发送存储在变量str中的额外数据（以URL编码形式的球员姓名和得分）。如果收到回调，这将触发所有定义的异步<b>Http事件</b>，你可以检查返回的 &quot;id &quot;与存储在变量 <span class="inline">post</span> ，以确保你运行正确的代码，如果你已经使用各种 <span class="inline">http_post_string()</span> 函数。下面的示例代码显示了这将是如何做到的。</p>
   <p class="code">var r_str = &quot;null&quot;;<br />
-    if ds_map_find_value(async_load, &quot;id&quot;) == post<br />
+    if (ds_map_find_value(async_load, &quot;id&quot;) == post) <br />
     {<br />
-        if ds_map_find_value(async_load, &quot;status&quot;) == 0<br />
+        if (ds_map_find_value(async_load, &quot;status&quot;) == 0) <br />
         {<br />
             r_str = ds_map_find_value(async_load, &quot;result&quot;);<br />
         }<br />
