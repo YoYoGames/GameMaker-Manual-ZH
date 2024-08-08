@@ -59,14 +59,8 @@
   <p>上述代码将把变量 &quot;name &quot;中持有的<span class="notranslate">string</span> 传递给给定的<span class="notranslate">server</span> ，以及从该URL中检索数据，触发一个异步事件，该事件将包含async_load DS map（async_load map索引将被存储在变量 &quot;get &quot;中，以便你可以检查正确的回调）。触发的Async事件将是<b>HTTP</b>子事件，在该事件中，你会有以下内容。</p>
   <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == get<br />
     {<br />
-        if (ds_map_find_value(async_load, &quot;status&quot;) == 0) <br />
-        {<br />
-            r_str = ds_map_find_value(async_load, &quot;result&quot;);<br />
-        }<br />
-        else<br />
-        {<br />
-            r_str = &quot;null&quot;;<br />
-        }<br />
+        var _status = async_load[? &quot;status&quot;];<br />
+        var _r_str = (_status == 0) ? async_load[? &quot;result&quot;] : &quot;null&quot;;<br />
     }</p>
   <p>上面的代码将首先检查已经创建的DS地图的ID，然后检查回调的 &quot;状态&quot;。如果该值等于0（表示成功），那么回调的结果将被存储在一个变量中供将来使用，否则该变量将被设置为一个默认值（在这里是 &quot;null&quot;）。</p>
   <p> </p>

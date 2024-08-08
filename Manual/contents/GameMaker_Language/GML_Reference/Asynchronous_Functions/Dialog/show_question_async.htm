@@ -47,10 +47,10 @@
     i_d = ds_map_find_value(async_load, &quot;id&quot;);<br />
     if (i_d == msg) <br />
     {<br />
-        if (ds_map_find_value(async_load, &quot;status&quot;)) <br />
+        if (ds_map_find_value(async_load, &quot;status&quot;))<br />
         {<br />
-            coins -= armour[0,5];<br />
-            global.protection += armour[0,0];<br />
+            coins -= armour[0, 5];<br />
+            global.protection += armour[0, 0];<br />
         }<br />
     }</p>
   <p>上述代码将返回的 <span class="inline">DS Map</span> 的 &quot;id &quot;键与存储在变量 &quot;msg &quot;中的值进行检查。如果它们相同，它就会检查两个按钮中是否有一个被按下，如果返回 <span class="inline">true</span> ，它就会从一个变量中扣除一个值，并向一个全局变量添加一个值。</p>

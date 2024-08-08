@@ -45,8 +45,8 @@
   <h4>扩展实例。</h4>
   <p>控制用户登录的<span class="notranslate">object</span> 的<b>创建事件</b>（例如）将有以下代码。</p>
   <p class="code">ini_open(&quot;Profile.ini&quot;);<br />
-    u = ini_read_string(&quot;User&quot;,&quot;0&quot;,&quot;&quot;);<br />
-    p = ini_read_string(&quot;User&quot;,&quot;1&quot;,&quot;&quot;);<br />
+    u = ini_read_string(&quot;User&quot;, &quot;0&quot;, &quot;&quot;);<br />
+    p = ini_read_string(&quot;User&quot;, &quot;1&quot;, &quot;&quot;);<br />
     ini_close();<br />
     login = get_login_async(u,p);</p>
   <p>上面的代码打开了一个ini文件（如果不存在，则创建一个），并获得存储在该文件中的名称和密码。如果它们不存在，则返回默认的空<span class="notranslate">string</span> （&quot;&quot;）。然后在 <span class="inline">get_login_async()</span> 中使用这些值来询问用户的用户名和密码细节，请求索引被存储在变量 &quot;login &quot;中。注意，在等待用户提供必要的信息时，游戏和它的事件将继续正常运行。</p>
