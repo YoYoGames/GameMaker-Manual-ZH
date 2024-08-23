@@ -27,7 +27,7 @@
   <p>然而，到目前为止，最常见和最实用的方法是在点的左边使用一个<i>变量</i>，只要该变量<i> 存储了一个有效的<b>实例id</b></i>。下面的例子说明了这一点。</p>
   <p class="code">// Example 1<br />
     var _inst = instance_position(mouse_x, mouse_y, all);<br />
-    if (instance_exists(_inst)) <br />
+    if (instance_exists(_inst))<br />
     {<br />
         _inst.speed = 0;<br />
     }<br />
@@ -64,7 +64,7 @@
     <br />
     // This will affect one instance of the object &quot;obj_Enemy&quot;<br />
     var _enemy = instance_nearest(x, y, obj_Enemy);<br />
-    if (instance_exists(_enemy)) <br />
+    if (instance_exists(_enemy))<br />
     {<br />
         with (_enemy)<br />
         {<br />

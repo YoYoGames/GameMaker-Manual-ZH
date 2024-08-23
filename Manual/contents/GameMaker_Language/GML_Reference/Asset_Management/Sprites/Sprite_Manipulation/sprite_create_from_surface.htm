@@ -90,7 +90,7 @@
     draw_sprite(spr_Body, 0, 0, 0);<br />
     draw_sprite(spr_Clothes, 0, 0, 0);<br />
     draw_sprite(spr_Hair, 0, 0, 0);<br />
-    spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, true, true, 16, 16);<br />
+    spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, false, false, 16, 16);<br />
     surface_reset_target();<br />
     surface_free(surf);</p>
   <p>上面的代码创建了一个曲面，并将其索引存储在本地变量 &quot;surf &quot;中。然后，它以该表面为目标，将其清除，并在上面绘制了几个<span class="notranslate">sprites</span> 。最后，它从表面上绘制的合成图像中创建一个新的<span class="notranslate">sprite</span> ，并将其索引分配给 &quot;spr_Custom&quot;，然后释放表面使用的内存。</p>
