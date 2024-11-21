@@ -49,7 +49,7 @@
     <li>设置<span class="notranslate">sequence</span> <span class="notranslate">object</span> 顶层值，如长度、播放模式、播放速度等。比如说</li>
   </ul>
   <p class="code">myseq.length = 120;<br />
-    myseq.loopmode = seqplay_pingpong</p>
+    myseq.loopmode = seqplay_pingpong;</p>
   <ul class="colour">
     <li>在添加轨道到<span class="notranslate">sequence</span> <span class="notranslate">object</span> ，你需要创建它们，所以你现在要创建一个<i>资产</i>轨道的数组，这些轨道已经用函数定义了 <a href="sequence_track_new.htm"><span class="inline">sequence_track_new()</span></a>.请注意，在代码中，<span class="notranslate">asset</span> 轨道和参数轨道之间其实没有什么区别--它们都是简单的轨道，它们的行为方式将取决于你创建的轨道类型，以及它们是否被分配为顶级轨道的子轨道。因此，你可以为一个<span class="notranslate">asset</span> ，然后为不同的参数分配子轨道，这些子轨道将作为<span class="notranslate">asset</span> 的<i>参数</i>轨道。下面的例子创建了一个单一的图形<span class="notranslate">asset</span> 轨道，以后会被添加到<span class="notranslate">sequence</span> 。</li>
   </ul>
@@ -61,7 +61,7 @@
   <p class="code">// Create a new keyframe struct for a graphics asset track and add it to an array (as you can have multiple keys in a frame)<br />
     var graphickeys = array_create(1);<br />
     graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic);<br />
-    // Set the graphics keyframe top level data for the keyframe position and length, etc...<br />
+    // Set the graphics keyframe top level data for the keyframe position and length, etc.<br />
     graphickeys[0].frame = 0;<br />
     graphickeys[0].length = 1;<br />
     graphickeys[0].stretch = true;<br />

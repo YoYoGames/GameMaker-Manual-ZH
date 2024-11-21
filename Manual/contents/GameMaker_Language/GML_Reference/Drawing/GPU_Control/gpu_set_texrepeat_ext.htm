@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>gpu_set_texrepeat_ext</title>
-  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <meta name="generator" content="Adobe RoboHelp 2022" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <script src="../../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
@@ -42,13 +42,13 @@
   <p> </p>
   <h4>例子。</h4>
   <p class="code">var s_tex = shader_get_sampler_index(shader_glass, &quot;s_NoiseSampler&quot;);<br />
-    if gpu_get_texfilter_ext(s_tex)<br />
+    if (gpu_get_texrepeat_ext(s_tex))<br />
     {<br />
-        gpu_set_texfilter_ext(s_tex, false);<br />
+        gpu_set_texrepeat_ext(s_tex, false);<br />
     }<br />
     else<br />
     {<br />
-        gpu_set_texfilter_ext(s_tex, true);<br />
+        gpu_set_texrepeat_ext(s_tex, true);<br />
     }</p>
   <p>上面的代码检查特定采样器ID（存储在一个局部变量中）的<span class="notranslate">texture</span> 过滤是否开启或关闭，并相应地进行切换。</p>
   <p> </p>

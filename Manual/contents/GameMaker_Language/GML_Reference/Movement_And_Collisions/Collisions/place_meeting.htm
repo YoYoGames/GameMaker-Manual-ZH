@@ -52,7 +52,10 @@
   <h4>例子。</h4>
   <p class="code">if keyboard_check(vk_left)<br />
     {<br />
-        if !place_meeting(x - 5, y, obj_wall) x -=5;<br />
+        if (!place_meeting(x - 5, y, obj_wall))<br />
+        {<br />
+            x -= 5;<br />
+        }<br />
     }</p>
   <p>上述代码检查实例左侧是否<i>有</i>碰撞，如果没有则移动实例。</p>
   <p> </p>

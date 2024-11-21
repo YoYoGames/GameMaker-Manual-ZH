@@ -61,7 +61,7 @@
   <p>上面的代码将<span class="notranslate">buffer</span> &quot;<i>buff</i>&quot;的内容保存到给定的保存文件中，将函数调用的ID保存在变量&quot;<i>saveid</i>&quot;中。当保存完成后，异步保存/加载事件将被触发，你可以解析 <span class="inline">async_load</span> 地图，以获得函数的正确ID，像这样。</p>
   <p class="code">if ds_map_find_value(async_load, &quot;id&quot;) == saveid<br />
     {<br />
-        if ds_map_find_value(async_load, &quot;status&quot;) == false<br />
+        if (ds_map_find_value(async_load, &quot;status&quot;) == false)<br />
         {<br />
             show_debug_message(&quot;Save failed!&quot;);<br />
         }<br />

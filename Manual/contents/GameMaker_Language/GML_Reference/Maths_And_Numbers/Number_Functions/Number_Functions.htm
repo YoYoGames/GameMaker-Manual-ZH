@@ -20,12 +20,12 @@
   <p>在处理跨平台开发时，整数和浮点数之间的这种区别非常重要，因为在<span class="notranslate">Windows</span> PC上进行的计算的精度与在移动设备上进行的这些计算的精度是<i>不</i>一样的。这意味着你在进行比较时要特别注意，比如说。</p>
   <p class="code">if (image_index == 1)<br />
     {<br />
-        do something...<br />
+        // Do something...<br />
     }</p>
   <p>在上面的例子中，如果我们一直将 <span class="inline">image_speed</span> 设置为0.25--例如--那么在四步之后，你可能会认为 <span class="inline">image_index</span> 的值是1，但是由于浮点数学的工作方式，它<i>可能</i>是一个像1.0000002的值，因此评估将不会是 <span class="inline">true</span> 。这些类型的错误可能相当难以调试，因此最好能意识到这些错误，并提前计划，使用其他方法来检查数值，或者使用适当的落地或四舍五入函数（列在下面），将要检查的数字转换成整数（关于浮点数学的更多信息以及为什么这是一个问题，请<a href="https://floating-point-gui.de/" target="_blank">看这里</a>）。例如，上面的代码可以写成。</p>
   <p class="code">if (floor(image_index) == 1)<br />
     {<br />
-        do something...<br />
+        // Do something...<br />
     }</p>
   <p>还值得注意的是，当使用<b>YoYo Compiler</b>目标时，所有的表达式和函数都是<i>从左到右评估</i>的，而在所有其他目标平台上，它们是<i>从右到左</i>评估的，这意味着--例如--会根据平台的不同得到不同的结果。</p>
   <p class="code">val = max(num, ++num, num++);</p>

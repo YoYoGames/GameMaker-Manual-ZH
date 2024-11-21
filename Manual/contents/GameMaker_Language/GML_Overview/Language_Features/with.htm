@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Page outlining the with function" />
+  <meta name="topic-comment" content="Page outlining the with statement" />
   <meta name="rh-index-keywords" content="with" />
   <meta name="search-keywords" content="with" />
 </head>
@@ -22,24 +22,24 @@
   <p>它将产生完全相同的效果，因为它只是第一条语句的简写。那么，我们<i>如何</i>实现这样的事情呢？这就是为什么 <span class="inline">with</span> 语句存在于<span class="notranslate">GML</span> 。 <span class="inline">with</span> 语句的语法如下。</p>
   <p class="code">with (&lt;expression&gt;)<br />
     {<br />
-        &lt;statement&gt;;<br />
-        &lt;statement&gt;;<br />
-        ...<br />
+    &lt;statement&gt;;<br />
+    &lt;statement&gt;;<br />
+    ...<br />
     }</p>
   <p><span class="notranslate">struct</span>对于<a class="glossterm" data-glossterm="表情" href="#">表达式</a>，你可以用一个实例ID、<span class="notranslate">object</span> ID（表示这个<span class="notranslate">room</span> 中的<i>所有实例</i> <span class="notranslate">object</span> 都要运行该代码块）、<span class="notranslate">struct</span> ID、或一个特殊的<a href="../Instance_Keywords.htm">关键字</a>(<span class="inline">all</span> 或<span class="inline">other</span>)来表示要执行代码。然后，这将改变大括号 <span class="inline">{}</span> 内的代码的<strong>范围</strong>，从实际持有代码的实例、<span class="notranslate">struct</span> 或函数到表达式中给出的实例（或实例或<span class="notranslate">struct</span> ）。</p>
   <p>一旦表达式设置了 <span class="inline">with</span> 的范围，<a class="glossterm" data-glossterm="声明" href="#">语句</a>就会对每个指定的实例执行，就像该实例是当前的( <span class="inline">self</span>)实例一样。因此，回到我们原来的问题，如果要把球<span class="notranslate">object</span> 的所有实例向下移动8个像素，你要输入。</p>
   <p class="code">with (obj_ball)<br />
     {<br />
-        y += 8;<br />
+        y += 8;<br />
     }</p>
   <p>本质上这是一个<span class="notranslate">loop</span> ，每一次<a class="glossterm" data-glossterm="迭代" href="#">迭代</a> <span class="notranslate">loop</span> ，代码将在一个<span class="notranslate">object</span> <span class="inline">obj_ball</span> 的实例上运行。</p>
   <p>如果你想执行多条语句，只需把它们放在大括号里，就像你在其他代码块周围一样。因此，例如，要将我们例子中的所有球移动到一个随机的位置，并给它们一个随机的速度和方向，你可以使用。</p>
   <p class="code">with (obj_ball)<br />
     {<br />
-        x = random(room_width);<br />
-        y = random(room_height);<br />
-        speed = 1 + random(2);<br />
-        direction = random(360);<br />
+        x = random(room_width);<br />
+        y = random(room_height);<br />
+        speed = 1 + random(2);<br />
+        direction = random(360);<br />
     }</p>
   <p>如上所述，在语句中，指定的实例或结构已成为运行代码块的目标(<span class="inline">self</span>)实例，这意味着原始实例（包含 <span class="inline">with</span> 和整个代码块）已成为 <a href="../Instance_Keywords.htm"><span class="inline">other</span></a>实例。因此--例如--要把所有的球移到实际包含代码的当前实例的位置，你可以这样输入。</p>
   <p class="code">with (obj_ball)<br />
@@ -86,9 +86,9 @@
     {<br />
         if (++count &gt; 10)<br />
         {<br />
-            break;<br />
+            break;<br />
         }<br />
-        hp = 100;<br />
+        hp = 100;<br />
     }</p>
   <p>上面的代码<span class="notranslate">loops</span> ，通过<span class="notranslate">room</span> <span class="inline">obj_Enemy</span> 的<span class="notranslate">object</span> 中的实例，并为它找到的前10个实例设置变量 <span class="inline">hp</span> 为100。如果有超过10个的实例存在，与代码将调用 <span class="inline">break</span> ，然后结束。</p>
   <p>在 <span class="inline">with</span> 循环中使用 <span class="inline">continue</span> 的一个例子是。</p>
