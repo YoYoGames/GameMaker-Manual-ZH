@@ -48,7 +48,7 @@ jobs:
     #     branch: ${{ github.ref }}
 
       - name: Use Custom Action for Sync
-        uses: GameMakerEnterprise/upstream-sync@main
+        uses: YoYoGames/upstream-sync@main
         with:
           upstream_repo: 'YoYoGames/GameMaker-Manual'
           github_token: ${{ secrets.GH_TOKEN }}
