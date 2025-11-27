@@ -60,7 +60,7 @@
       </tr>
     </tbody>
   </table>
-  <p><br>
+  <p><br />
     第一个选项(<span class="inline">network_config_connect_timeout</span>)只是设置了连接到<span class="notranslate">server</span> 的超时，但除了你必须等待的时间外，并不改变连接行为。建议你不要把这个值设置得太低，如果是只在局域网内的游戏，保持在1000左右，如果是互联网，保持在4000左右，否则游戏可能无法随机连接。如果你想为发送/接收数据包设置一个超时值，可以使用函数 <a href="network_set_timeout.htm"><span class="inline">network_set_timeout()</span></a>.</p>
   <p>第二个选项 (<span class="inline">network_config_use_non_blocking_socket</span>) 意味着 <span class="inline">network_connect_*</span> 函数（非异步）都会立即返回一个 <span class="inline">socket_id</span> ，<i>但你不能在该套接字上发送或接收，直到你收到一个异步网络事件</i>。触发的事件将有 &quot;类型 &quot;键设置为 <span class="inline">network_type_non_blocking_connect</span> （你可以从<a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">网络异步事件</a>的页面上找到进一步的细节）。这是一个<b>全局</b>设置，因为<span data-keyref="GameMaker Name">GameMaker</span>不支持在一个应用程序中混合使用阻塞和非阻塞。</p>
   <p>第三个和第四个选项 (<span class="inline">network_config_enable_reliable_udp</span>, <span class="inline">network_config_disable_reliable_udp</span>) 用于启用或禁用<span data-keyref="GameMaker Name">GameMaker</span>可靠的 UDP 协议，因此，<b>只应在 UDP 连接中使用</b>。在这种情况下，&quot;可靠 &quot;的意思是，当连接的<i>两端</i>都启用时，<span data-keyref="GameMaker Name">GameMaker</span>将尝试检查你的数据包是否正确到达，并重新发送任何未到达的数据包（注意，我们不保证你的数据包将按照传输顺序到达）。当使用可靠的套接字类型时，将有一个12字节的头添加到所有udp数据包中，其中包含<span data-keyref="GameMaker Name">GameMaker</span>需要的信息，以检查数据包的错误并重新发送丢失的数据包。使用这个选项时，以下几点值得注意。</p>

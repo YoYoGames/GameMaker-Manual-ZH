@@ -55,7 +55,7 @@
       </tr>
     </tbody>
   </table>
-  <p><br>
+  <p><br />
     这些常量的用途也需要被定义，以便在创建的<span class="notranslate">shader</span> ，这些值可以被正确地 &quot;绑定&quot;。这是必要的，因为DX和OpenGL有不同的要求，所以如果你没有正确地绑定它们，它们就不会在<span class="notranslate">shader</span> 。你可以选择的可用的使用常量列在下面，你使用的常量将取决于正在创建的<span class="notranslate">shader</span> 的具体内容。</p>
   <table>
     <colgroup>
@@ -116,7 +116,7 @@
       </tr>
     </tbody>
   </table>
-  <p><br>
+  <p><br />
     在使用这样的自定义格式时，有一些重要的事情需要注意。</p>
   <ul class="colour">
     <li>当使用GLSL<span class="notranslate">shaders</span> 时， <span class="inline">vertex_format_add_custom()</span> 函数只支持 <span class="inline">vertex_usage_position</span>, <span class="inline">vertex_usage_colour</span>, <span class="inline">vertex_usage_normal</span> 和 <span class="inline">vertex_usage_textcoord</span> 。这些将分别映射到<span class="notranslate">shader</span> 的属性 <span class="inline">in_Position</span>, <span class="inline">in_Colour[0 - ...]</span>, <span class="inline">in_Normal</span> （任何不是这三个属性之一的东西--例如：<span class="notranslate">texture</span> 坐标--可以映射到你定义的任何属性）。</li>

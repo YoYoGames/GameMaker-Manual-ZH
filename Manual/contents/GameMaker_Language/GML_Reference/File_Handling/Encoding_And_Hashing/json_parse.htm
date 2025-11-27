@@ -48,12 +48,12 @@
     show_debug_message(data);
   </p>
   <p>上面的代码创建了一个新的<span class="notranslate">string</span> ，包含一个有效的JSON<span class="notranslate">object</span> ，然后调用 <span class="inline">json_parse()</span> ，将该<span class="notranslate">string</span> 转换为<span class="notranslate">GML</span> <span class="notranslate">struct</span> 。然后它将结果打印到调试日志。</p>
-  <p class="note"><span class="note">注意</span>你会注意到JSON<span class="notranslate">string</span> 里面的每一个双引号（<span class="inline2">&quot;</span>）之前都包含一个反斜杠<span class="inline2">（\</span>）。<br>
-    <br>
-   <span class="inline2">json = &quot;{<strong>\&quot; </strong></span>myObj<br>
-    <br>
-    这是为了确保双引号在<span class="notranslate">string</span> ，而不是作为代码的一部分被读取并过早地关闭<span class="notranslate">string</span> 。这样我们就用反斜杠来 &quot;逃避 &quot;双引号。<br>
-    <br>
+  <p class="note"><span class="note">注意</span>你会注意到JSON<span class="notranslate">string</span> 里面的每一个双引号（<span class="inline2">&quot;</span>）之前都包含一个反斜杠<span class="inline2">（\</span>）。<br />
+    <br />
+   <span class="inline2">json = &quot;{<strong>\&quot; </strong></span>myObj<br />
+    <br />
+    这是为了确保双引号在<span class="notranslate">string</span> ，而不是作为代码的一部分被读取并过早地关闭<span class="notranslate">string</span> 。这样我们就用反斜杠来 &quot;逃避 &quot;双引号。<br />
+    <br />
     然而，如果你从一个外部文件加载JSON，就没有必要在该文件中转义字符，这样做可能会在解析过程中导致错误。
   </p>
   <hr />
