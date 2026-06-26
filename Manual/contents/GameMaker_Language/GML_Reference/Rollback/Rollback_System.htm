@@ -7,7 +7,7 @@
   <title>回滚系统</title>
   <meta name="topic-status" content="Draft" />
   <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
-  <script src="../../../assets/scripts/main_script.js"></script>
+  <script src="../../../assets/scripts/main_script.js" type="module"></script>
   <meta name="rh-authors" content="Gurpreet S. Matharoo" />
   <meta name="topic-comment" content="Details for Rollback Multiplayer" />
   <meta name="template" content="../../../assets/masterpages/Manual_Page.htt" />
@@ -35,11 +35,13 @@
   <ul class="colour">
     <li><strong>输入</strong>。每个玩家的<a href="Rollback_Functions/rollback_define_input.htm">输入</a>都会被发送给其他玩家。如果玩家0在自己的客户端按了<strong>&quot;开火&quot;</strong>，Rollback将确保其他客户端也看到玩家0按了<strong>&quot;开火&quot;。</strong><br />
       <br />
-     <strong>预测只在输入时运行。</strong>
+     <strong>预测只在输入时运行。
+</strong>
     </li>
     <li><strong>状态</strong>。这包括所有管理的<span class="notranslate">objects</span> 和它们的变量。这些在玩家之间是不同步的：在一个客户端改变一个变量不会在另一个客户端自动更新。<br />
       <br />
-     <strong>状态的管理只是为了回滚的目的。</strong>
+     <strong>状态的管理只是为了回滚的目的。
+</strong>
     </li>
   </ul>
   <h2>那么......有什么区别呢？</h2>
